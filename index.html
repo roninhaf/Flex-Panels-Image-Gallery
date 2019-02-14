@@ -37,8 +37,6 @@
       color: white;
       text-align: center;
       align-items: center;
-      /* Safari transitionend event.propertyName === flex */
-      /* Chrome + FF transitionend event.propertyName === flex-grow */
       transition:
         font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
         flex 1.5s cubic-bezier(.05,.08,0,1),
@@ -129,32 +127,22 @@
 
   <script>
     
-    /*function pushWords(a) {
-      if(document.getElementsByClassName('open')) {
-        a.target.classList.add('open-active');
-      }
-    }*/
-    
     function addOpen(a) {
-      /*if(document.getElementsByClassName('open')) {
-        panels.forEach(a => a.classList.remove('open'));
-      }*/
+      
       a.target.classList.add('open');
       a.target.classList.add('open-active');
     }
 
     function removeOpen() {
+      
       panels.forEach(a => a.classList.remove('open', 'open-active'));
     }
 
     const panels = document.querySelectorAll('.panel');
     panels.forEach(a => a.addEventListener('mouseenter', addOpen));
-    //panels.forEach(a => a.addEventListener('transitionend', pushWords));
     panels.forEach(a => a.addEventListener('mouseleave', removeOpen));
 
   </script>
-
-
 
 </body>
 </html>
