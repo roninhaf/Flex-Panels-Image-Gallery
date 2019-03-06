@@ -127,20 +127,20 @@
 
   <script>
     
-    function addOpen(a) {
+    function addOpen(event) {
       
-      a.target.classList.add('open');
-      a.target.classList.add('open-active');
+      event.target.classList.add('open');
+      event.target.classList.add('open-active');
     }
 
     function removeOpen() {
       
-      panels.forEach(a => a.classList.remove('open', 'open-active'));
+      panels.forEach(panel => panel.classList.remove('open', 'open-active'));
     }
 
     const panels = document.querySelectorAll('.panel');
-    panels.forEach(a => a.addEventListener('mouseenter', addOpen));
-    panels.forEach(a => a.addEventListener('mouseleave', removeOpen));
+    panels.forEach(panel => panel.addEventListener('mouseenter', addOpen));
+    panels.forEach(panel => panel.addEventListener('mouseleave', removeOpen));
 
   </script>
 
